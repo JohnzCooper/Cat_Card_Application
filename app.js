@@ -25,17 +25,17 @@ const main = async () => {
     for (let [index, text] of textList.entries()) {
         const url = getCatImageUrlWithText(text, { width, height, size, color });
         const fetchedImageBuffer = await fetchImage(url);
-        let imageCordinates = { x: 0, y: 0 };
+        let imageCoordinates = { x: 0, y: 0 };
 
         if (!fetchedImageBuffer)
             continue;
 
         if (index === 1)
-            imageCordinates.x = width;
+            imageCoordinates.x = width;
 
         catImageBufferList.push({
             buffer: fetchedImageBuffer,
-            ...imageCordinates
+            ...imageCoordinates
         });
     }
 
@@ -94,7 +94,7 @@ const fetchImage = async url => {
 
 /**
  * Binds images together into one image
- * @param {array} imageData List of image objects with image buffer and image cordinates
+ * @param {array} imageData List of image objects with image buffer and image coordinates
  * @param {object} options Object of options with generating image width, height, format
  * @returns {object} Blended image buffer
  */
@@ -109,11 +109,11 @@ const blendImages = async (imageData, options) => {
 }
 
 /**
- * Cretae the cat-card.jpg image file
+ * Create the cat-card.jpg image file
  * @param {object} blendedImageBuffer Blended image buffer
  */
 const saveBlendedImage = blendedImageBuffer => {
-    const fileOut = join(process.cwd(), '/images/cat-card.jpg');
+    const fileOut = join(__dirname, '/images/cat-card.jpg');
     writeFile(fileOut, blendedImageBuffer, 'binary', err => {
         if (err) {
             console.log(err);
