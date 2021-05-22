@@ -1,0 +1,21 @@
+{
+  "name": "cat_card_application",
+  "version": "1.0.0",
+  "description": "Technical Exercise Harver",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Amila Samaranayake",
+  "license": "ISC",
+  "dependencies": {
+    "@mapbox/blend": "^2.0.1",
+    "fs": "0.0.1-security",
+    "minimist": "^1.2.5",
+    "node-fetch": "^2.6.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "eslint": "^7.27.0"
+  }
+}
