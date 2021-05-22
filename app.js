@@ -113,7 +113,7 @@ const blendImages = async (imageData, options) => {
  * @param {object} blendedImageBuffer Blended image buffer
  */
 const saveBlendedImage = blendedImageBuffer => {
-    const fileOut = join(process.cwd(), '/cat-card.jpg');
+    const fileOut = join(process.cwd(), '/images/cat-card.jpg');
     writeFile(fileOut, blendedImageBuffer, 'binary', err => {
         if (err) {
             console.log(err);
