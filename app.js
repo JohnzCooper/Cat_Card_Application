@@ -79,7 +79,7 @@ const fetchImage = async url => {
     if (!url) {
         console.error('Image url not found.'); 
         return; 
-    };
+    }
 
     const response = await fetch(url);
     if (response && response.ok){
