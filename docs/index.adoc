@@ -89,5 +89,5 @@ node app --greeting first-text --who second-text --width custom-width --height c
 
 == Documentation
 
-* API document is in `asciidoc` format and It is in the repo.(`/docs` directory).
+* The document is in `asciidoc` format and It is in the repo.(`/docs` directory).
 
