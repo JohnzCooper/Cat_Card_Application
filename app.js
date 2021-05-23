@@ -101,26 +101,17 @@ const saveBlendedImage = blendedImageBuffer => {
         const fetchedImageBuffer = await fetchImage(url);
         let imageCoordinates = { x: 0, y: 0 };
 
-        if (!fetchedImageBuffer)
-            continue;
+        if (!fetchedImageBuffer) continue;
 
-        if (index === 1)
-            imageCoordinates.x = width;
+        if (index === 1) imageCoordinates.x = width;
 
-        catImageBufferList.push({
-            buffer: fetchedImageBuffer,
-            ...imageCoordinates
-        });
+        catImageBufferList.push({ buffer: fetchedImageBuffer, ...imageCoordinates });
     }
 
     if (catImageBufferList) {
         blendImages(catImageBufferList, { width: width * 2, height: height, format: 'jpeg' })
-            .then((data) => {
-                saveBlendedImage(data);
-            })
-            .catch((error) => {
-                console.error(`Error caught: ${error}`);
-            });
+            .then((data) => {  saveBlendedImage(data); })
+            .catch((error) => { console.error(`Error caught: ${error}`); });
     }
 }
 
