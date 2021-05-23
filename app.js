@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 const blend = require('@mapbox/blend');
 const argv = require('minimist')(process.argv.slice(2));
-const { writeFile } = require('fs');
+const { writeFile } = require('fs').promises;
 const { join } = require('path');
 
 const BASE_URL = 'https://cataas.com/cat';
@@ -83,13 +83,10 @@ const blendImages = (imageData, options) => {
  */
 const saveBlendedImage = blendedImageBuffer => {
     const fileOut = join(__dirname, '/images/cat-card.jpg');
-    writeFile(fileOut, blendedImageBuffer, 'binary', error => {
-        if (error) {
-            console.log(`Error caught: ${error}`);
-            return;
-        }
-        console.log('The file was saved!');
-    });
+
+    writeFile(fileOut, blendedImageBuffer)
+        .then (() => { console.log('The file was saved!'); })
+        .catch(error => { console.error(`Error caught: ${error}`); });
 }
 
 /**
