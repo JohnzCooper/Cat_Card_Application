@@ -77,7 +77,7 @@ node app --greeting first-text --who second-text --width custom-width --height c
     Custom image height
 
 ** color: +
-    Custom image color
+    Custom text color
     
 ** size: + 
     Custom image size
