@@ -85,14 +85,14 @@ const saveBlendedImage = blendedImageBuffer => {
     const fileOut = join(__dirname, '/images/cat-card.jpg');
 
     writeFile(fileOut, blendedImageBuffer)
-        .then (() => { console.log('The file was saved!'); })
+        .then(() => { console.log('The file was saved!'); })
         .catch(error => { console.error(`Error caught: ${error}`); });
 }
 
 /**
  * The entry point of the application.
  */
- const main = async () => {
+const main = async () => {
     const catImageBufferList = [];
     const textList = [greeting, who];
 
@@ -110,7 +110,7 @@ const saveBlendedImage = blendedImageBuffer => {
 
     if (catImageBufferList) {
         blendImages(catImageBufferList, { width: width * 2, height: height, format: 'jpeg' })
-            .then((data) => {  saveBlendedImage(data); })
+            .then((data) => { saveBlendedImage(data); })
             .catch((error) => { console.error(`Error caught: ${error}`); });
     }
 }
